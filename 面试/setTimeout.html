@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+  // 有关setTimeout的执行问题
+  var a = 9;
+  let obj = {
+    a: 10,
+    b: function () {
+      console.log(this.a);
+    }
+  }
+
+  setTimeout(obj.b(), 50000);
+  setTimeout(console.log('log输出函数1'), 50000);
+  setTimeout("console.log('log输出函数2')", 5000);
+  setTimeout(obj.b, 5000);
+
+
+
+  // 1.遇到setTimeout函数会对前面的部分进行解析，如果是立即执行函数 函数名()就会马上执行，
+  //            如果是匿名函数或者字符串那么会进入任务队列等待时间到达，之后通知主程序执行该回到函数。
+
+  // 2.console.log(123)是一个立即执行函数。
+
+
+  /*
+    1.输出顺序： 立即输出：   10               log输出函数1
+                   5s:      log输出函数2      undefined
+  
+    2.说明：   
+          2.1-setTimeout(func|code,delay)
+                        定时器中可以接收代码或者函数，代码必须字符串形式给出。
+                        定时器内部使用eval()函数，将字符串转为代码。如： "console.log('log输出函数2')"
+                        eval()函数：
+                
+          2.2-JS在解析setTimeout延迟器时候会对其中的function进行解析，
+                      如果是立即执行函数就会【立即执行】，如果是匿名函数则会等待时间结束进行执行。
+          2.3-如果写成setTimeout(func(),5000);func会立即执行。
+                      如： setTimeout(obj.b(), 50000);
+                          setTimeout(console.log('log输出函数1'), 50000);
+          
+          2.4-setTimeout支持更多的参数。第三个参数开始，依次用来表示（回调函数）传入的参数。
+
+          2.5-setTimeout()中回调函数中的this执行浏览器的window。
+                      如：  setTimeout(obj.b, 5000);中的a为window.a。
+          
+          2.6-可以使用bind(this)改变回调函数中的this执行。
+                     如：var a=1;
+                        var obj={
+                            a:2,
+                            b:function(){
+                                setTimeout(function(){
+                                    console.log(this.a);
+                                }.bind(this),2000);  //注意这行
+                            }
+                        };
+                        obj.b(); // 2.
+
+  */
+</script>
+
+</html>

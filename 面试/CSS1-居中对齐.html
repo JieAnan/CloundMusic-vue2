@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 400px;
+      height: 400px;
+      background-color: cornflowerblue;
+
+      /* 1.子元素快速水平垂直居中对齐- 父flex,子margin自适应*/
+      display: flex;
+
+      /* 2.使用绝对定位 自绝父项- translate*/
+      /* 3.使用绝对定位 自绝父项- margin*/
+      /* 4.使用绝对定位 自绝父项- 边距为0+ margin自适应*/
+      /* position: relative; */
+
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: coral;
+
+      /* 1.子元素快速居中对齐 */
+      margin: auto;
+
+      /* 2.使用绝对定位 自绝父项-translate*/
+      /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+
+      /* 3.使用绝对定位 自绝父项-margin*/
+      /* position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -100px;
+      margin-top: -100px; */
+
+      /* 4.使用绝对定位+四边距为0 + margin->auto */
+      /* position: absolute;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto; */
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son">
+      我是子盒子
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,30 +1,35 @@
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <!-- 路由出口 -->
+    <router-view />
+    <!-- 全局组件 FooterMusic -->
+    <FooterMusic v-show="this.$route.path !='/login'" />
+  </div>
+
 </template>
 
+
+<script>
+</script>
+
+
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
+li {
+  list-style-type: none;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+// 设置所有的icon大小
+.icon {
+  width: 0.5rem;
+  height: 0.5rem;
+  fill: currentColor;
+  overflow: hidden;
 }
 </style>
