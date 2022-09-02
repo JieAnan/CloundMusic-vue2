@@ -32,7 +32,7 @@ vercel在线部署    [网易云音乐移动端](https://github.com/JieAnan/Nete
 
 ​     3.5 然后设置 `PROJECT NAME`，点击 `Deploy` 按钮等待创建完成。
 
-​     3.6 等待部署完成之后，点击 ==visit== 即可访问该网站。
+​     3.6 等待部署完成之后，点击 `visit` 即可访问该网站。
 
 
 
