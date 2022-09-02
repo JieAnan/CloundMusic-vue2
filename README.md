@@ -52,4 +52,11 @@ vercel在线部署    [网易云音乐移动端](https://github.com/JieAnan/Nete
 
 
 
-# 三、启动完成截图
+# 三、启动完成截图（一定要在本地运行后端接口之后，才能正确运行该项目）
+![1](https://github.com/JieAnan/CloundMusic-vue2/blob/master/src/assets/page1.png)
+![2](https://github.com/JieAnan/CloundMusic-vue2/blob/master/src/assets/page2.png)
+![3](https://github.com/JieAnan/CloundMusic-vue2/blob/master/src/assets/page3.png)
+![4](https://github.com/JieAnan/CloundMusic-vue2/blob/master/src/assets/page4.png)
+![5](https://github.com/JieAnan/CloundMusic-vue2/blob/master/src/assets/page5.png)
+![6](https://github.com/JieAnan/CloundMusic-vue2/blob/master/src/assets/page6.png)
+
